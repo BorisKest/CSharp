@@ -28,7 +28,7 @@ namespace Laba1SvenKestner
 
         }
         // -------------------------------------------------------------------VAR-----------------------------------------------------------
-        public Double x0 = 4, tStep = 1,  x1, Delta;
+        public double x0 = 2, tStep = 1,  x1=0, Delta;
         private int k=0;
         public string a0, b0;
         static public String g;
@@ -38,8 +38,6 @@ namespace Laba1SvenKestner
 
         public string SvenFunc()
         {
-
-            // x0 - tStep, x0, x0 + tStep;
             for (int i = 0; i <= 3; i++)
             {
                 switch (i)
@@ -53,16 +51,14 @@ namespace Laba1SvenKestner
                     case 3:
                         g = g + "case 3 = " + Convert.ToString(ActFunc(x0 + tStep));
                         break;
-
                 }
-
             }
             return g;
         }
 
         static double ActFunc(double temp)
         {
-            return 25 - 9 * temp;
+            return Math.Pow( temp,2 )+2*temp+ 3;
         }
         // Что тут происходит одному товарищу Свену известно 
         public string TempFunc()
@@ -74,32 +70,10 @@ namespace Laba1SvenKestner
 
                 a0 = Convert.ToString(x0 - tStep);
                 b0 = Convert.ToString(x0 + tStep);
-                return a0 +  " " +b0 ;
-
-
-            }
-
-            if (ActFunc(x0 - tStep) >= ActFunc(x0) && ActFunc(x0) >= ActFunc(x0 + tStep))//12
-            {
-                a0 = Convert.ToString(x0);
-                x[0] = x0;
-                x0 = x0 + tStep;
-                k = 1;
-                Delta = tStep;
-
+                return a0 + " " +b0 ;
             }
 
 
-
-            if (ActFunc(x0 - tStep) <= ActFunc(x0) && ActFunc(x0) <= ActFunc(x0 + tStep))//2
-            {
-
-                Delta = -tStep;
-                x[1] = x0;
-                x0 -= tStep;
-                k = 1;
-
-            }
 
                 if (ActFunc(x0 - tStep) <= ActFunc(x0) && ActFunc(x0) >= ActFunc(x0 + tStep))//22 no exit
                 {
@@ -109,8 +83,31 @@ namespace Laba1SvenKestner
             
             for (; ; k++) 
             {
+                if (ActFunc(x0 - tStep) >= ActFunc(x0) && ActFunc(x0) >= ActFunc(x0 + tStep))//12
+                {
+                    a0 = Convert.ToString(x0);
+                    x[0] = x0;
+                    x0 = x0 + tStep;
+                    k = 1;
+                    Delta = tStep;
+
+                }
+
+
+
+                if (ActFunc(x0 - tStep) <= ActFunc(x0) && ActFunc(x0) <= ActFunc(x0 + tStep))//2
+                {
+
+                    Delta = -tStep;
+                    x[1] = x0;
+                    x0 -= tStep;
+                    k = 1;
+
+                }
+
                 double xF;
                 xF = x0 + Math.Pow(2, k) * Delta;
+
                 if (ActFunc(xF) < ActFunc(x0))
                 {
                     if (Delta == tStep)
@@ -142,8 +139,5 @@ namespace Laba1SvenKestner
             }
             return " [ " + Convert.ToString( x[0]) + "  : " + Convert.ToString(x[1] )+ " ]";
         }
-        // x[k+1]= x[k] +2^k * Delta
-
-
     }
 }

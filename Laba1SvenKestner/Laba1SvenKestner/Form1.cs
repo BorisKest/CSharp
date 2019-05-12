@@ -22,7 +22,7 @@ namespace Laba1SvenKestner
         {
            
            
-            labeliusOutPut.Text = "Svan = " + svan.TempFunc(); 
+            labeliusOutPut.Text = "Result  = " + svan.TempFunc(); 
         }
 
         private void Form1_Load(object sender, EventArgs e)

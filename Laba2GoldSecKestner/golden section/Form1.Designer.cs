@@ -38,7 +38,7 @@
             this.Elbutton.Name = "Elbutton";
             this.Elbutton.Size = new System.Drawing.Size(176, 71);
             this.Elbutton.TabIndex = 0;
-            this.Elbutton.Text = "VAMOS";
+            this.Elbutton.Text = "go";
             this.Elbutton.UseVisualStyleBackColor = true;
             this.Elbutton.Click += new System.EventHandler(this.Elbutton_Click);
             // 

@@ -1,0 +1,26 @@
+﻿<Properties StartupConfiguration="{143A2A90-996A-48CC-95E1-F6DFF8E6A1AC}|Default">
+  <MonoDevelop.Ide.ItemProperties.Laba1SvenKestner PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Laba1SvenKestner/Program.cs">
+    <Files>
+      <File FileName="Laba1SvenKestner/Form1.cs" Line="20" Column="1" />
+      <File FileName="Laba1SvenKestner/Program.cs" Line="31" Column="53" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Laba1SvenKestner" expanded="True">
+            <Node name="Laba1SvenKestner" expanded="True">
+              <Node name="Program.cs" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
