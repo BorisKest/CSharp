@@ -57,27 +57,7 @@ namespace golden_section
 
                 }
 
-                if (ActFunc(x0 - tStep) >= ActFunc(x0) && ActFunc(x0) >= ActFunc(x0 + tStep))//12
-                {
-                    a0 = Convert.ToString(x0);
-                    x[0] = x0;
-                    x0 = x0 + tStep;
-                    k = 1;
-                    Delta = tStep;
-
-                }
-
-
-
-                if (ActFunc(x0 - tStep) <= ActFunc(x0) && ActFunc(x0) <= ActFunc(x0 + tStep))//2
-                {
-
-                    Delta = -tStep;
-                    x[1] = x0;
-                    x0 -= tStep;
-                    k = 1;
-
-                }
+               
 
                 if (ActFunc(x0 - tStep) <= ActFunc(x0) && ActFunc(x0) >= ActFunc(x0 + tStep))//22 no exit
                 {
@@ -87,7 +67,29 @@ namespace golden_section
 
                 for (; ; k++)
                 {
-                    double xF;
+
+                    if (ActFunc(x0 - tStep) >= ActFunc(x0) && ActFunc(x0) >= ActFunc(x0 + tStep))//12
+                    {
+                        a0 = Convert.ToString(x0);
+                        x[0] = x0;
+                        x0 = x0 + tStep;
+                        k = 1;
+                        Delta = tStep;
+
+                    }
+
+
+
+                    if (ActFunc(x0 - tStep) <= ActFunc(x0) && ActFunc(x0) <= ActFunc(x0 + tStep))//2
+                   {
+
+                        Delta = -tStep;
+                        x[1] = x0;
+                        x0 -= tStep;
+                        k = 1;
+
+                    }
+                double xF;
                     xF = x0 + Math.Pow(2, k) * Delta;
                     if (ActFunc(xF) < ActFunc(x0))
                     {

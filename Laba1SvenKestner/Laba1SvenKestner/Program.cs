@@ -28,7 +28,7 @@ namespace Laba1SvenKestner
 
         }
         // -------------------------------------------------------------------VAR-----------------------------------------------------------
-        public double x0 = 2, tStep = 1,  x1=0, Delta;
+        public double x0 = -500, tStep = 10,  x1=0, Delta;
         private int k=0;
         public string a0, b0;
         static public String g;
@@ -58,7 +58,7 @@ namespace Laba1SvenKestner
 
         static double ActFunc(double temp)
         {
-            return Math.Pow( temp,2 )+2*temp+ 3;
+            return Math.Pow( temp,2 )+ 5;
         }
         // Что тут происходит одному товарищу Свену известно 
         public string TempFunc()
@@ -75,35 +75,36 @@ namespace Laba1SvenKestner
 
 
 
-                if (ActFunc(x0 - tStep) <= ActFunc(x0) && ActFunc(x0) >= ActFunc(x0 + tStep))//22 no exit
-                {
-                    return "функция не является унимодальной, а требуемый интервал неопределенности не может быть найден,рекомендуется задать другую начальную точку x0";
-                }
+            if (ActFunc(x0 - tStep) <= ActFunc(x0) && ActFunc(x0) >= ActFunc(x0 + tStep))//22 no exit
+            {
+                return "функция не является унимодальной, а требуемый интервал неопределенности не может быть найден,рекомендуется задать другую начальную точку x0";
+            }
+           
+            if (ActFunc(x0 - tStep) >= ActFunc(x0) && ActFunc(x0) >= ActFunc(x0 + tStep))//12
+            {
+                a0 = Convert.ToString(x0);
+                x[0] = x0;
+                x0 = x0 + tStep;
+                k = 1;
+                Delta = tStep;
 
-            
+            }
+
+
+
+            if (ActFunc(x0 - tStep) <= ActFunc(x0) && ActFunc(x0) <= ActFunc(x0 + tStep))//2
+            {
+
+                Delta = -tStep;
+                x[1] = x0;
+                x0 -= tStep;
+                k = 1;
+
+            }
+
             for (; ; k++) 
             {
-                if (ActFunc(x0 - tStep) >= ActFunc(x0) && ActFunc(x0) >= ActFunc(x0 + tStep))//12
-                {
-                    a0 = Convert.ToString(x0);
-                    x[0] = x0;
-                    x0 = x0 + tStep;
-                    k = 1;
-                    Delta = tStep;
 
-                }
-
-
-
-                if (ActFunc(x0 - tStep) <= ActFunc(x0) && ActFunc(x0) <= ActFunc(x0 + tStep))//2
-                {
-
-                    Delta = -tStep;
-                    x[1] = x0;
-                    x0 -= tStep;
-                    k = 1;
-
-                }
 
                 double xF;
                 xF = x0 + Math.Pow(2, k) * Delta;
@@ -127,7 +128,7 @@ namespace Laba1SvenKestner
                     
                     if (Delta == tStep)
                     {
-                        x[1] = x0;
+                        x[1] = xF;
                     }
                      if (Delta == -tStep)
                     {
