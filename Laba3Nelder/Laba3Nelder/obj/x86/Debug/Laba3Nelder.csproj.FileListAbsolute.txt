@@ -1,0 +1,2 @@
+/Users/boris/Documents/GitHub/C-/Laba3Nelder/Laba3Nelder/obj/x86/Debug/Laba3Nelder.csprojAssemblyReference.cache
+/Users/boris/Documents/GitHub/C-/Laba3Nelder/Laba3Nelder/obj/x86/Debug/Laba3Nelder.csproj.CoreCompileInputs.cache
