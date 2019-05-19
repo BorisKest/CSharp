@@ -97,11 +97,12 @@ namespace Laba1SvenKestner
             
             while   ( flag == false )
             {
-                k = 0;
+                int counter = 0; // <== добавил
+                //k = 0;
                 k++;
-                double[] x = new double[8];
+                double[] x = new double[8] { .0, .0, .0, .0, .0, .0, .0, .0 };
 
-                if (ActFunc(x[k + 1], 0) < ActFunc(x[k], 0))
+                if (ActFunc(x[counter + 1], .0) < ActFunc(x[counter], .0))
                 {
                     if (Delta == tStep)
                     {
