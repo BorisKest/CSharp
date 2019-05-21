@@ -28,8 +28,9 @@ namespace Laba1SvenKestner
 
         }
         // -------------------------------------------------------------------VAR-----------------------------------------------------------
-        public Double x0 = 0.1, tStep = 0.001, temp, a0, b0, x1, Delta;
+        public Double x0 = 2.1, tStep = 0.001, temp, x1, Delta;
         private int k;
+        public string a0,b0;
         //double[] x;
         static public String g;
         bool flag = false;
@@ -66,36 +67,41 @@ namespace Laba1SvenKestner
             return result;
         }
 
-        public string TempFunc(string a0,string b0)
+        public string TempFunc()
         {
             if (ActFunc(x0 - tStep, 0) >= ActFunc(x0, 0))//1
             {
-                if (ActFunc(x0, 0) <= ActFunc(x0 + tStep, 0))//11
+                if (ActFunc(x0, 0) <= ActFunc(x0 + tStep, 0))
                 {
                     a0 = Convert.ToString(x0 - tStep);
                     b0 = Convert.ToString(x0 + tStep);
+                    return a0 + ' ' + b0;
                 }
-                else if (ActFunc(x0, 0) >= ActFunc(x0 + tStep, 0))//12
+                 if (ActFunc(x0, 0) >= ActFunc(x0 + tStep, 0))//12
                 {
                     a0 = Convert.ToString(x0);
                     x1 = x0 + tStep;
                     k = 1;
                     Delta = tStep;
+                    return a0 + " "+Convert.ToString(x0);
                 }
+                
             }
-            else if (ActFunc(x0 - tStep, 0) <= ActFunc(x0, 0))//2
+             if (ActFunc(x0 - tStep, 0) <= ActFunc(x0, 0))//2
             {
                 if (ActFunc(x0, 0) <= ActFunc(x0 + tStep, 0))//21 
                 {
                     Delta = -tStep;
                     b0 = Convert.ToString(x0);
                     x0 -= tStep;
+                    return b0 + ' ' + Convert.ToString(x0);
 
                 }
-                else if (ActFunc(x0, 0) >= ActFunc(x0 + tStep, 0))//22 no exit
+                 if (ActFunc(x0, 0) >= ActFunc(x0 + tStep, 0))//22 no exit
                 {
-                    // LabeliusOutPut.text = "функция не является унимодальной, а требуемый интервал неопределенности не может быть найден,рекомендуется задать другую начальную точку x0";
+                     return "функция не является унимодальной, а требуемый интервал неопределенности не может быть найден,рекомендуется задать другую начальную точку x0";
                 }
+               
             }
             
             while   ( flag == false )
@@ -111,31 +117,37 @@ namespace Laba1SvenKestner
                     {
                         a0 = Convert.ToString(x[k]);
                         k++;
+                        return a0;
                     }
-                    else if (Delta == -tStep)
+                     if (Delta == -tStep)
                     {
                         b0 = Convert.ToString(x[k]);
                         k++;
+                        return b0;
                     }
+                    
                 }
-                else if (ActFunc(x[k + 1], 0) > ActFunc(x[k], 0))
+                 if (ActFunc(x[k + 1], 0) > ActFunc(x[k], 0))
                 {
                     flag = true;
                     if (Delta == tStep)
                     {
                         b0 = Convert.ToString(x[k]);
                         k++;
+                        return b0;
                     }
-                    else if (Delta == -tStep)
+                     if (Delta == -tStep)
                     {
                         a0 = Convert.ToString(x[k]);
                         k++;
+                        return a0;
                     }
+                    
                 }
                 return a0 +' '+b0;
             }
             // x[k+1]= x[k] +2^k * Delta
-
+            return "sdds";
         }
     }
 }

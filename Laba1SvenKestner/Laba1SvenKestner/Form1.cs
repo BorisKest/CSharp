@@ -21,7 +21,7 @@ namespace Laba1SvenKestner
         {
             Sven svan = new Sven();
             svan.SvenFunc();
-            labeliusOutPut.Text = "Svan = " + 
+            labeliusOutPut.Text = "Svan = " + svan.TempFunc(); 
         }
     }
 }
