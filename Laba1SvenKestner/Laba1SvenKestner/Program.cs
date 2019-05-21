@@ -75,7 +75,7 @@ namespace Laba1SvenKestner
                 {
                     a0 = Convert.ToString(x0 - tStep);
                     b0 = Convert.ToString(x0 + tStep);
-                    return a0 + ' ' + b0;
+                    
                 }
                  if (ActFunc(x0, 0) >= ActFunc(x0 + tStep, 0))//12
                 {
@@ -83,7 +83,7 @@ namespace Laba1SvenKestner
                     x1 = x0 + tStep;
                     k = 1;
                     Delta = tStep;
-                    return a0 + " "+Convert.ToString(x0);
+                   
                 }
                 
             }
@@ -94,7 +94,7 @@ namespace Laba1SvenKestner
                     Delta = -tStep;
                     b0 = Convert.ToString(x0);
                     x0 -= tStep;
-                    return b0 + ' ' + Convert.ToString(x0);
+                    
 
                 }
                  if (ActFunc(x0, 0) >= ActFunc(x0 + tStep, 0))//22 no exit
@@ -117,13 +117,13 @@ namespace Laba1SvenKestner
                     {
                         a0 = Convert.ToString(x[k]);
                         k++;
-                        return a0;
+                        
                     }
                      if (Delta == -tStep)
                     {
                         b0 = Convert.ToString(x[k]);
                         k++;
-                        return b0;
+                       
                     }
                     
                 }
@@ -134,20 +134,20 @@ namespace Laba1SvenKestner
                     {
                         b0 = Convert.ToString(x[k]);
                         k++;
-                        return b0;
+
                     }
                      if (Delta == -tStep)
                     {
                         a0 = Convert.ToString(x[k]);
                         k++;
-                        return a0;
+                        
                     }
                     
                 }
-                return a0 +' '+b0;
+              
             }
             // x[k+1]= x[k] +2^k * Delta
-            return "sdds";
+            return a0 + ' ' + b0; ;
         }
     }
 }
