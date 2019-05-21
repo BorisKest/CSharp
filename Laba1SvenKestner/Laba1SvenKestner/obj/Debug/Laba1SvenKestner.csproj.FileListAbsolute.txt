@@ -18,3 +18,10 @@ L:\Вижуалка\Laba1SvenKestner\Laba1SvenKestner\obj\Debug\Laba1SvenKestner
 L:\Вижуалка\Laba1SvenKestner\Laba1SvenKestner\obj\Debug\Laba1SvenKestner.csproj.CoreCompileInputs.cache
 L:\Вижуалка\Laba1SvenKestner\Laba1SvenKestner\obj\Debug\Laba1SvenKestner.exe
 L:\Вижуалка\Laba1SvenKestner\Laba1SvenKestner\obj\Debug\Laba1SvenKestner.pdb
+L:\C-\Laba1SvenKestner\Laba1SvenKestner\obj\Debug\Laba1SvenKestner.csprojAssemblyReference.cache
+L:\C-\Laba1SvenKestner\Laba1SvenKestner\obj\Debug\Laba1SvenKestner.Form1.resources
+L:\C-\Laba1SvenKestner\Laba1SvenKestner\obj\Debug\Laba1SvenKestner.Properties.Resources.resources
+L:\C-\Laba1SvenKestner\Laba1SvenKestner\obj\Debug\Laba1SvenKestner.csproj.GenerateResource.cache
+L:\C-\Laba1SvenKestner\Laba1SvenKestner\obj\Debug\Laba1SvenKestner.csproj.CoreCompileInputs.cache
+L:\C-\Laba1SvenKestner\Laba1SvenKestner\obj\Debug\Laba1SvenKestner.exe
+L:\C-\Laba1SvenKestner\Laba1SvenKestner\obj\Debug\Laba1SvenKestner.pdb

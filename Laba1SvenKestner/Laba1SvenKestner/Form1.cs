@@ -17,11 +17,11 @@ namespace Laba1SvenKestner
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Button1_Click(object sender, EventArgs e)
         {
             Sven svan = new Sven();
             svan.SvenFunc();
-            labeliusOutPut.Text = "Svan = " + Sven.g;
+            labeliusOutPut.Text = "Svan = " + 
         }
     }
 }

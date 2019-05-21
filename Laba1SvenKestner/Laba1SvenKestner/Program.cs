@@ -28,7 +28,8 @@ namespace Laba1SvenKestner
 
         }
         // -------------------------------------------------------------------VAR-----------------------------------------------------------
-        public Double x0 = 0.1, tStep = 0.001, k = 0, temp, a0, b0, x1, Delta;
+        public Double x0 = 0.1, tStep = 0.001, temp, a0, b0, x1, Delta;
+        private int k;
         //double[] x;
         static public String g;
         bool flag = false;
@@ -58,23 +59,25 @@ namespace Laba1SvenKestner
 
             }
         }
+
         static double ActFunc(double temp, double result)
         {
             result = temp * 2;
             return result;
         }
-        public void TempFunc()
+
+        public string TempFunc(string a0,string b0)
         {
             if (ActFunc(x0 - tStep, 0) >= ActFunc(x0, 0))//1
             {
                 if (ActFunc(x0, 0) <= ActFunc(x0 + tStep, 0))//11
                 {
-                    a0 = x0 - tStep;
-                    b0 = x0 + tStep;
+                    a0 = Convert.ToString(x0 - tStep);
+                    b0 = Convert.ToString(x0 + tStep);
                 }
                 else if (ActFunc(x0, 0) >= ActFunc(x0 + tStep, 0))//12
                 {
-                    a0 = x0;
+                    a0 = Convert.ToString(x0);
                     x1 = x0 + tStep;
                     k = 1;
                     Delta = tStep;
@@ -85,7 +88,7 @@ namespace Laba1SvenKestner
                 if (ActFunc(x0, 0) <= ActFunc(x0 + tStep, 0))//21 
                 {
                     Delta = -tStep;
-                    b0 = x0;
+                    b0 = Convert.ToString(x0);
                     x0 -= tStep;
 
                 }
@@ -97,38 +100,39 @@ namespace Laba1SvenKestner
             
             while   ( flag == false )
             {
-                int counter = 0; // <== добавил
-                //k = 0;
+                
+                k = 0;
                 k++;
-                double[] x = new double[8] { .0, .0, .0, .0, .0, .0, .0, .0 };
+                double[] x = new double[8];
 
-                if (ActFunc(x[counter + 1], .0) < ActFunc(x[counter], .0))
+                if (ActFunc(x[k + 1], .0) < ActFunc(x[k], .0))
                 {
                     if (Delta == tStep)
                     {
-                        a0 = x[k];
+                        a0 = Convert.ToString(x[k]);
                         k++;
                     }
                     else if (Delta == -tStep)
                     {
-                        b0 = x[k];
+                        b0 = Convert.ToString(x[k]);
                         k++;
                     }
                 }
-                else if (ActFunc(x0[k + 1], 0) > ActFunc(x0[k], 0))
+                else if (ActFunc(x[k + 1], 0) > ActFunc(x[k], 0))
                 {
                     flag = true;
                     if (Delta == tStep)
                     {
-                        b0 = x[k];
+                        b0 = Convert.ToString(x[k]);
                         k++;
                     }
                     else if (Delta == -tStep)
                     {
-                        a0 = x[k];
+                        a0 = Convert.ToString(x[k]);
                         k++;
                     }
                 }
+                return a0 +' '+b0;
             }
             // x[k+1]= x[k] +2^k * Delta
 
