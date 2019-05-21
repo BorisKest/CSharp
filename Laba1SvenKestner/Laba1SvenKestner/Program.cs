@@ -28,106 +28,105 @@ namespace Laba1SvenKestner
 
         }
         // -------------------------------------------------------------------VAR-----------------------------------------------------------
-        public Double x0 = 2.1, tStep = 0.001, temp, x1, Delta;
+        public Double x0 = 1, tStep = 1, temp, x1, Delta;
         private int k;
         public string a0,b0;
-        //double[] x;
         static public String g;
         bool flag = false;
        
         //----------------------------------------------------------------------------------------------------------------------------------
 
 
-        public void SvenFunc()
+        public string SvenFunc()
         {
             
             // x0 - tStep, x0, x0 + tStep;
-            for (int i = 0; i < 3; i++)
+            for (int i = 0; i <= 3; i++)
             {
                 switch (i)
                 {
                     case 1:
-                        g = g + "case1 " + Convert.ToString(ActFunc(x0 - tStep, 0));
+                        g = g + "case 1 = " + Convert.ToString(ActFunc(x0 - tStep));
                         break;
                     case 2:
-                        g = g + "case2 " + Convert.ToString(ActFunc(x0, 0));
+                        g = g + "case 2 = " + Convert.ToString(ActFunc(x0));
                         break;
                     case 3:
-                        g = g + "cas3 " + Convert.ToString(ActFunc(x0 + tStep, 0));
+                        g = g + "case 3 = " + Convert.ToString(ActFunc(x0 + tStep));
                         break;
 
                 }
 
             }
+            return g;
         }
 
-        static double ActFunc(double temp, double result)
+        static double ActFunc(double temp)
         {
-            result = temp * 2;
-            return result;
+            return 25 / 2 *temp ;
         }
 
         public string TempFunc()
         {
-            if (ActFunc(x0 - tStep, 0) >= ActFunc(x0, 0))//1
+            double[] x = new double[100];
+            while (flag == false)
             {
-                if (ActFunc(x0, 0) <= ActFunc(x0 + tStep, 0))
+                if (ActFunc(x0 - tStep) >= ActFunc(x0)) //1
                 {
-                    a0 = Convert.ToString(x0 - tStep);
-                    b0 = Convert.ToString(x0 + tStep);
-                    
-                }
-                 if (ActFunc(x0, 0) >= ActFunc(x0 + tStep, 0))//12
-                {
-                    a0 = Convert.ToString(x0);
-                    x1 = x0 + tStep;
-                    k = 1;
-                    Delta = tStep;
-                   
-                }
-                
-            }
-             if (ActFunc(x0 - tStep, 0) <= ActFunc(x0, 0))//2
-            {
-                if (ActFunc(x0, 0) <= ActFunc(x0 + tStep, 0))//21 
-                {
-                    Delta = -tStep;
-                    b0 = Convert.ToString(x0);
-                    x0 -= tStep;
-                    
+                    if (ActFunc(x0) <= ActFunc(x0 + tStep))//11
+                    {
+                        a0 = Convert.ToString(x0 - tStep);
+                        b0 = Convert.ToString(x0 + tStep);
+                        return "a0 = " + a0 + "b0=" + b0 + "  //11";
+
+                    }
+                    else if (ActFunc(x0) >= ActFunc(x0 + tStep))//12
+                    {
+                        a0 = Convert.ToString(x0);
+                        x1 = x0 + tStep;
+                        k = 1;
+                        Delta = tStep;
+
+                    }
 
                 }
-                 if (ActFunc(x0, 0) >= ActFunc(x0 + tStep, 0))//22 no exit
+                else if (ActFunc(x0 - tStep) <= ActFunc(x0))//2
                 {
-                     return "функция не является унимодальной, а требуемый интервал неопределенности не может быть найден,рекомендуется задать другую начальную точку x0";
+                    if (ActFunc(x0) <= ActFunc(x0 + tStep))//21 
+                    {
+                        Delta = -tStep;
+                        b0 = Convert.ToString(x0);
+                        x0 -= tStep;
+
+                    }
+                    else if (ActFunc(x0) >= ActFunc(x0 + tStep))//22 no exit
+                    {
+                        return "функция не является унимодальной, а требуемый интервал неопределенности не может быть найден,рекомендуется задать другую начальную точку x0";
+                    }
+
                 }
-               
-            }
-            
-            while   ( flag == false )
-            {
-                
-                k = 0;
+
+                x[k + 1] = x[k] + Math.Pow(2, k) * Delta;
                 k++;
-                double[] x = new double[8];
 
-                if (ActFunc(x[k + 1], .0) < ActFunc(x[k], .0))
+
+                if (ActFunc(x[k + 1]) < ActFunc(x[k]))
                 {
                     if (Delta == tStep)
                     {
                         a0 = Convert.ToString(x[k]);
                         k++;
-                        
+
                     }
-                     if (Delta == -tStep)
+                    else if (Delta == -tStep)
                     {
                         b0 = Convert.ToString(x[k]);
                         k++;
-                       
+
                     }
-                    
+
                 }
-                 if (ActFunc(x[k + 1], 0) > ActFunc(x[k], 0))
+                else if (ActFunc(x[k + 1]) > ActFunc(x[k]))
                 {
                     flag = true;
                     if (Delta == tStep)
@@ -136,18 +135,19 @@ namespace Laba1SvenKestner
                         k++;
 
                     }
-                     if (Delta == -tStep)
+                    else if (Delta == -tStep)
                     {
                         a0 = Convert.ToString(x[k]);
                         k++;
-                        
+
                     }
                     
                 }
-              
             }
-            // x[k+1]= x[k] +2^k * Delta
-            return a0 + ' ' + b0; ;
+            return " [ "+ a0 + "  : " + b0 + " ]";
         }
+                // x[k+1]= x[k] +2^k * Delta
+               
+        
     }
 }
