@@ -29,17 +29,16 @@ namespace Laba1SvenKestner
         }
         // -------------------------------------------------------------------VAR-----------------------------------------------------------
         public Double x0 = 1, tStep = 1, temp, x1, Delta;
-        private int k;
-        public string a0,b0;
+        private int k=0;
+        public string a0, b0;
         static public String g;
-        bool flag = false;
-       
+
         //----------------------------------------------------------------------------------------------------------------------------------
 
 
         public string SvenFunc()
         {
-            
+
             // x0 - tStep, x0, x0 + tStep;
             for (int i = 0; i <= 3; i++)
             {
@@ -63,91 +62,86 @@ namespace Laba1SvenKestner
 
         static double ActFunc(double temp)
         {
-            return 25 / 2 *temp ;
+            return 25 - 9 * temp;
         }
-
+        // Что тут происходит одному товарищу Свену известно 
         public string TempFunc()
         {
-            double[] x = new double[100];
-            while (flag == false)
+            double[] x = new double[10];
+
+            if (ActFunc(x0 - tStep) >= ActFunc(x0) && ActFunc(x0) <= ActFunc(x0 + tStep)) //1
             {
-                if (ActFunc(x0 - tStep) >= ActFunc(x0)) //1
+
+                a0 = Convert.ToString(x0 - tStep);
+                b0 = Convert.ToString(x0 + tStep);
+                return "0";
+
+
+            }
+
+            if (ActFunc(x0 - tStep) >= ActFunc(x0) && ActFunc(x0) >= ActFunc(x0 + tStep))//12
+            {
+                a0 = Convert.ToString(x0);
+                x[0] = x0;
+                x0 = x0 + tStep;
+                k = 1;
+                Delta = tStep;
+
+            }
+
+
+
+            if (ActFunc(x0 - tStep) <= ActFunc(x0) && ActFunc(x0) <= ActFunc(x0 + tStep))//2
+            {
+
+                Delta = -tStep;
+                x[1] = x0;
+                x0 -= tStep;
+                k = 1;
+
+            }
+
+                if (ActFunc(x0 - tStep) <= ActFunc(x0) && ActFunc(x0) >= ActFunc(x0 + tStep))//22 no exit
                 {
-                    if (ActFunc(x0) <= ActFunc(x0 + tStep))//11
-                    {
-                        a0 = Convert.ToString(x0 - tStep);
-                        b0 = Convert.ToString(x0 + tStep);
-                        return "a0 = " + a0 + "b0=" + b0 + "  //11";
-
-                    }
-                    else if (ActFunc(x0) >= ActFunc(x0 + tStep))//12
-                    {
-                        a0 = Convert.ToString(x0);
-                        x1 = x0 + tStep;
-                        k = 1;
-                        Delta = tStep;
-
-                    }
-
-                }
-                else if (ActFunc(x0 - tStep) <= ActFunc(x0))//2
-                {
-                    if (ActFunc(x0) <= ActFunc(x0 + tStep))//21 
-                    {
-                        Delta = -tStep;
-                        b0 = Convert.ToString(x0);
-                        x0 -= tStep;
-
-                    }
-                    else if (ActFunc(x0) >= ActFunc(x0 + tStep))//22 no exit
-                    {
-                        return "функция не является унимодальной, а требуемый интервал неопределенности не может быть найден,рекомендуется задать другую начальную точку x0";
-                    }
-
+                    return "функция не является унимодальной, а требуемый интервал неопределенности не может быть найден,рекомендуется задать другую начальную точку x0";
                 }
 
-                x[k + 1] = x[k] + Math.Pow(2, k) * Delta;
-                k++;
-
-
-                if (ActFunc(x[k + 1]) < ActFunc(x[k]))
+            
+            for (; ; k++) 
+            {
+                double xF;
+                xF = x0 + Math.Pow(2, k) * Delta;
+                if (ActFunc(xF) < ActFunc(x0))
                 {
                     if (Delta == tStep)
                     {
-                        a0 = Convert.ToString(x[k]);
-                        k++;
-
+                        x[0] = x0;
+                        x0 = xF;
                     }
-                    else if (Delta == -tStep)
+                     if (Delta == -tStep)
                     {
-                        b0 = Convert.ToString(x[k]);
-                        k++;
-
+                        x[1] = x0;
+                        x0 = xF;
                     }
-
                 }
-                else if (ActFunc(x[k + 1]) > ActFunc(x[k]))
+                 if (ActFunc(xF) > ActFunc(x0))
                 {
-                    flag = true;
-                    if (Delta == tStep)
-                    {
-                        b0 = Convert.ToString(x[k]);
-                        k++;
-
-                    }
-                    else if (Delta == -tStep)
-                    {
-                        a0 = Convert.ToString(x[k]);
-                        k++;
-
-                    }
                     
+                    if (Delta == tStep)
+                    {
+                        x[1] = x1;
+                    }
+                     if (Delta == -tStep)
+                    {
+                        x[0] = xF;
+                    }
+                    break;
                 }
             }
-            return " [ "+ a0 + "  : " + b0 + " ]";
+            return " [ " + Convert.ToString( x[0]) + "  : " + Convert.ToString(x[1] )+ " ]";
         }
-                // x[k+1]= x[k] +2^k * Delta
-               
-        
+        // x[k+1]= x[k] +2^k * Delta
+
+
     }
 }
