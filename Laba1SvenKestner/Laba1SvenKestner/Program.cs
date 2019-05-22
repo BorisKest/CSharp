@@ -28,7 +28,7 @@ namespace Laba1SvenKestner
 
         }
         // -------------------------------------------------------------------VAR-----------------------------------------------------------
-        public Double x0 = 1, tStep = 1, temp, x1, Delta;
+        public Double x0 = 1, tStep = 1,  x1, Delta;
         private int k=0;
         public string a0, b0;
         static public String g;
@@ -74,7 +74,7 @@ namespace Laba1SvenKestner
 
                 a0 = Convert.ToString(x0 - tStep);
                 b0 = Convert.ToString(x0 + tStep);
-                return "0";
+                return a0 +  " " +b0 ;
 
 
             }
@@ -123,8 +123,9 @@ namespace Laba1SvenKestner
                         x[1] = x0;
                         x0 = xF;
                     }
+                    
                 }
-                 if (ActFunc(xF) > ActFunc(x0))
+                 if (ActFunc(xF) >= ActFunc(x0))
                 {
                     
                     if (Delta == tStep)
@@ -136,6 +137,7 @@ namespace Laba1SvenKestner
                         x[0] = xF;
                     }
                     break;
+                   
                 }
             }
             return " [ " + Convert.ToString( x[0]) + "  : " + Convert.ToString(x[1] )+ " ]";
