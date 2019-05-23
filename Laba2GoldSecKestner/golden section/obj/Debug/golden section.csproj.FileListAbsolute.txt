@@ -8,3 +8,6 @@ L:\C-\Laba2GoldSecKestner\golden section\obj\Debug\golden section.csproj.Generat
 L:\C-\Laba2GoldSecKestner\golden section\obj\Debug\golden section.csproj.CoreCompileInputs.cache
 L:\C-\Laba2GoldSecKestner\golden section\obj\Debug\golden section.exe
 L:\C-\Laba2GoldSecKestner\golden section\obj\Debug\golden section.pdb
+L:\C-\Laba2GoldSecKestner\golden section\bin\Debug\System.ValueTuple.dll
+L:\C-\Laba2GoldSecKestner\golden section\bin\Debug\System.ValueTuple.xml
+L:\C-\Laba2GoldSecKestner\golden section\obj\Debug\golden section.csproj.CopyComplete

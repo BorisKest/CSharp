@@ -33,8 +33,8 @@
             // 
             // Elbutton
             // 
-            this.Elbutton.Font = new System.Drawing.Font("Old English Text MT", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Elbutton.Location = new System.Drawing.Point(317, 374);
+            this.Elbutton.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Elbutton.Location = new System.Drawing.Point(12, 12);
             this.Elbutton.Name = "Elbutton";
             this.Elbutton.Size = new System.Drawing.Size(176, 71);
             this.Elbutton.TabIndex = 0;
@@ -47,7 +47,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.WindowFrame;
-            this.ClientSize = new System.Drawing.Size(800, 485);
+            this.ClientSize = new System.Drawing.Size(196, 95);
             this.Controls.Add(this.Elbutton);
             this.Font = new System.Drawing.Font("Old English Text MT", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "Form1";

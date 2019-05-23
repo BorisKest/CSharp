@@ -19,6 +19,7 @@ namespace golden_section
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
         }
+    }
 
         class Sven // Found the [a:b]
         {
@@ -37,7 +38,7 @@ namespace golden_section
 
 
 
-            static double ActFunc(double temp)
+            public double ActFunc(double temp)
             {
                 return 25 - 9 * temp;
             }
@@ -128,23 +129,23 @@ namespace golden_section
         class GolsSec// use the gold section to opti.
         {
             //........................................................var.............................................
-           static private double a, b, f;
+           static private double a, b;
            static double  eps = 0.001, z = (3 - Math.Sqrt(5)) / 2;
            static double x1 = a + z * (b - a), x2 = b - z * (b - a);
             //........................................................................................................
             Sven svan = new Sven();
             
 
-            private GolsSec()
-                {
+            public double GolsSe()
+            {
                 a = svan.TempFunc().Item1;
                 b = svan.TempFunc().Item2;
 
 
 
-                for (int i = 0; b - a > eps; i++)
+               for (int i = 0; b - a > eps; i++)
                 {
-                    if (f(x1) <= f(x2))
+                    if (svan.ActFunc(x1) <= svan.ActFunc(x2))
                     {
                         b = x2;
                         x2 = x1;
@@ -157,10 +158,10 @@ namespace golden_section
                         x2 = a + b - x1;
                     }
                 }
-                    double x = (a + b) / 2;
-                    Console.WriteLine(x);
-                    Console.WriteLine(f(x));
+                double x = (a + b) / 2;
+
+                return x;
             }
         }
-    }
+    
 }
