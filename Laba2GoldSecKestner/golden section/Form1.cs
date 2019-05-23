@@ -25,5 +25,10 @@ namespace golden_section
         {
             Elbutton.Text = Convert.ToString(svan.ActFunc(gold.GolsSe()));
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
