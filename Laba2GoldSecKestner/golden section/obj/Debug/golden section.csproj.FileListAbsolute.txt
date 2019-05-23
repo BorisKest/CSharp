@@ -1,0 +1,10 @@
+L:\C-\Laba2GoldSecKestner\golden section\bin\Debug\golden section.exe.config
+L:\C-\Laba2GoldSecKestner\golden section\bin\Debug\golden section.exe
+L:\C-\Laba2GoldSecKestner\golden section\bin\Debug\golden section.pdb
+L:\C-\Laba2GoldSecKestner\golden section\obj\Debug\golden section.csprojAssemblyReference.cache
+L:\C-\Laba2GoldSecKestner\golden section\obj\Debug\golden_section.Form1.resources
+L:\C-\Laba2GoldSecKestner\golden section\obj\Debug\golden_section.Properties.Resources.resources
+L:\C-\Laba2GoldSecKestner\golden section\obj\Debug\golden section.csproj.GenerateResource.cache
+L:\C-\Laba2GoldSecKestner\golden section\obj\Debug\golden section.csproj.CoreCompileInputs.cache
+L:\C-\Laba2GoldSecKestner\golden section\obj\Debug\golden section.exe
+L:\C-\Laba2GoldSecKestner\golden section\obj\Debug\golden section.pdb

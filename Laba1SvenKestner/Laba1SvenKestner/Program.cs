@@ -28,7 +28,7 @@ namespace Laba1SvenKestner
 
         }
         // -------------------------------------------------------------------VAR-----------------------------------------------------------
-        public Double x0 = 1, tStep = 1,  x1, Delta;
+        public Double x0 = 4, tStep = 1,  x1, Delta;
         private int k=0;
         public string a0, b0;
         static public String g;
@@ -130,7 +130,7 @@ namespace Laba1SvenKestner
                     
                     if (Delta == tStep)
                     {
-                        x[1] = x1;
+                        x[1] = x0;
                     }
                      if (Delta == -tStep)
                     {
