@@ -28,13 +28,37 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.Elbutton = new System.Windows.Forms.Button();
+            this.SuspendLayout();
+            // 
+            // Elbutton
+            // 
+            this.Elbutton.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Elbutton.Location = new System.Drawing.Point(12, 12);
+            this.Elbutton.Name = "Elbutton";
+            this.Elbutton.Size = new System.Drawing.Size(176, 71);
+            this.Elbutton.TabIndex = 0;
+            this.Elbutton.Text = "VAMOS";
+            this.Elbutton.UseVisualStyleBackColor = true;
+            this.Elbutton.Click += new System.EventHandler(this.Elbutton_Click);
+            // 
+            // Form1
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.ClientSize = new System.Drawing.Size(196, 95);
+            this.Controls.Add(this.Elbutton);
+            this.Font = new System.Drawing.Font("Old English Text MT", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Name = "Form1";
             this.Text = "Form1";
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private System.Windows.Forms.Button Elbutton;
     }
 }
 
