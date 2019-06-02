@@ -92,7 +92,7 @@ namespace Laba3Nelder
         public double[] mid= new double;
         public double m(x)
         {
-            mid = (arrayX[i] + arrayY[i]) / 2();
+            mid = (arrayX[i] + arrayY[i]) / 2);
         }
 
        

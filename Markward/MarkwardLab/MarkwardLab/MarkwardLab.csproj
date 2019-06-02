@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{4E063A50-39F3-44C2-909C-0F10998AFEB4}</ProjectGuid>
+    <ProjectGuid>{E87BC730-8E2A-4ED3-86FC-A4173C143F46}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>WindowsFormsApp1</RootNamespace>
-    <AssemblyName>WindowsFormsApp1</AssemblyName>
+    <RootNamespace>MarkwardLab</RootNamespace>
+    <AssemblyName>MarkwardLab</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -65,6 +65,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -78,6 +79,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Func1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\func2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\func3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\func4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\func5.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
